@@ -1,15 +1,16 @@
 .container{
-    height: 400px;
+    height: 300px;
     width: 800px;
-    display: inline-block;
     border: 1px black solid;
     background-color: grey;
+    display: inline-block;
 }
 
 .choice{
-    margin: 10px;
     height: 200px;
     width: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: inline-block;
 }
 
@@ -26,4 +27,9 @@
 .choice.scissors{
     border: 1px black solid;
     background-color: green;
+}
+
+button{
+    width: 100px;
+    height: 40px;
 }

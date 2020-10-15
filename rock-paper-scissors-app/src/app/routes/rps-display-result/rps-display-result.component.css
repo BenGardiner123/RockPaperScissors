@@ -1,15 +1,31 @@
 .container{
     height: 400px;
     width: 800px;
-    display: inline-block;
+    display: flex;
     border: 1px black solid;
     background-color: grey;
+    justify-content: center;
+    align-items: center;
 }
 
 .choice{
+    border: 1px black solid;
+    height: 200px;
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.choice.userSelection{
+    border: 1px black solid;
     margin: 10px;
     height: 200px;
     width: 200px;
-    display: inline-block;
 }
 
+.choice.AiSelection{
+    border: 1px black solid;
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+}

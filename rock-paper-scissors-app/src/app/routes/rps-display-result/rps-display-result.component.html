@@ -1,11 +1,15 @@
 <div class="container">
-    <h1>You've made your selection</h1>
+   
 
-    <div class="choice">
+    <div class="choice userSelection">
         <h2>your selection was {{rockPaperScissorsService.selection}}</h2>
     </div>
-    
-    <div>
+
+    <div class="choice AiSelection">
+        <h2>The Ai Chose {{rockPaperScissorsService.selection}}</h2>
+    </div>
+   
+    <div class="buttonBox">
         <button routerLink="selection">Let's play again?</button>
     </div>
     
