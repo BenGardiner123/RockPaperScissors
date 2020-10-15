@@ -4,8 +4,10 @@ import { RpsDisplayResultComponent } from './routes/rps-display-result/rps-displ
 import { RpsSelectionComponent } from './routes/rps-selection/rps-selection.component';
 
 const routes: Routes = [
-  {path: 'selection', component: RpsSelectionComponent},
-  {path: 'result', component: RpsDisplayResultComponent}
+  {path: "selection", component: RpsSelectionComponent},
+  {path: "result", component: RpsDisplayResultComponent},
+
+  {path: "**", redirectTo: "selection"}
 ];
 
 @NgModule({

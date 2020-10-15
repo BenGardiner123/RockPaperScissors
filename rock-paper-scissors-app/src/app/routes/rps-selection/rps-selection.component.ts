@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
 
 @Component({
   selector: 'app-rps-selection',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RpsSelectionComponent implements OnInit {
 
-  constructor() { }
+  constructor( private rockPaperScissorService: RockPaperScissorService) { }
 
   ngOnInit(): void {
   }

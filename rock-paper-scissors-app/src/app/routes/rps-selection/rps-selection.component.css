@@ -1,0 +1,25 @@
+.container{
+    display: flexbox;
+    border: 1px black solid;
+    background-color: grey;
+}
+
+.choice{
+    height: 400px;
+    width: 600px;
+}
+
+.choice.rock{
+    border: 1px black solid;
+    background-color: red;
+}
+
+.choice.paper{
+    border: 1px black solid;
+    background-color: blue;
+}
+
+.choice.scissors{
+    border: 1px black solid;
+    background-color: green;
+}
