@@ -11,6 +11,7 @@ export class RpsDisplayResultComponent implements OnInit {
   constructor(public rockPaperScissorsService: RockPaperScissorService) { }
 
   ngOnInit(): void {
+    this.rockPaperScissorsService.selection;
   }
 
 }
