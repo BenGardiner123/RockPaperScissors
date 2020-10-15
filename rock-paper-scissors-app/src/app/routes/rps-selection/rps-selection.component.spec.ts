@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectionPickerComponent } from './selection-picker.component';
+import { RpsSelectionComponent } from './rps-selection.component';
 
-describe('SelectionPickerComponent', () => {
-  let component: SelectionPickerComponent;
-  let fixture: ComponentFixture<SelectionPickerComponent>;
+describe('RpsSelectionComponent', () => {
+  let component: RpsSelectionComponent;
+  let fixture: ComponentFixture<RpsSelectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SelectionPickerComponent ]
+      declarations: [ RpsSelectionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SelectionPickerComponent);
+    fixture = TestBed.createComponent(RpsSelectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

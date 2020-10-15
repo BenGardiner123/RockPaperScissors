@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectionDisplayComponent } from './selection-display.component';
+import { RpsDisplayResultComponent } from './rps-display-result.component';
 
-describe('SelectionDisplayComponent', () => {
-  let component: SelectionDisplayComponent;
-  let fixture: ComponentFixture<SelectionDisplayComponent>;
+describe('RpsDisplayResultComponent', () => {
+  let component: RpsDisplayResultComponent;
+  let fixture: ComponentFixture<RpsDisplayResultComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SelectionDisplayComponent ]
+      declarations: [ RpsDisplayResultComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SelectionDisplayComponent);
+    fixture = TestBed.createComponent(RpsDisplayResultComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
