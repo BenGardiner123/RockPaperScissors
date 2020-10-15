@@ -1,12 +1,16 @@
 .container{
-    display: flexbox;
+    height: 400px;
+    width: 800px;
+    display: inline-block;
     border: 1px black solid;
     background-color: grey;
 }
 
 .choice{
-    height: 400px;
-    width: 600px;
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
 }
 
 .choice.rock{

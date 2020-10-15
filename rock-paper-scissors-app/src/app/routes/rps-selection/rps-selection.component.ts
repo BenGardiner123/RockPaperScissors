@@ -13,4 +13,8 @@ export class RpsSelectionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  makeSelection(option: 'rock' | 'paper' | 'scissors'){
+    this.rockPaperScissorService.commitSelection(option)
+  }
+
 }
