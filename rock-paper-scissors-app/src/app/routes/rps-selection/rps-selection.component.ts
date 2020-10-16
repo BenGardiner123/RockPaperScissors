@@ -20,16 +20,31 @@ export class RpsSelectionComponent implements OnInit {
 
   }
 
-  makeSelection(option: 'rock' | 'paper' | 'scissors'){
-    this.rockPaperScissorService.commitSelection(option)
-    if (option == 'rock')
-    this.rockSelected = !this.rockSelected;
+  chooseThis(option: 'rock' | 'paper' | 'scissors'){
+    if (option == 'rock'){
+      this.rockSelected = !this.rockSelected;
+    }
     else if(option == 'paper')
-    this.paperSelected = !this.paperSelected;
+    {
+      this.paperSelected = !this.paperSelected;
+    }
     else if(option == 'scissors')
-    this.scissorsSelected = !this.scissorsSelected;
+    {
+      this.scissorsSelected = !this.scissorsSelected;
+    }
   }
 
- 
+  makeSelection(){
+    if (this.rockSelected){
+      this.rockPaperScissorService.commitSelection('rock');
+    }
+    else if(this.paperSelected){
+      this.rockPaperScissorService.commitSelection('paper');
+    }
+    else if(this.rockSelected){
+      this.rockPaperScissorService.commitSelection('rock');
+  }
+
+}
   
 }

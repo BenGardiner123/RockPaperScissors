@@ -15,13 +15,18 @@ export class RockPaperScissorService {
 
   private _selection: 'rock' | 'paper' | 'scissors' | null;
   
+  private _outcome: 'win' | 'lose' | 'draw' | null;
 
   get selection(){
     return this._selection;
-
   }
+
   get aiselection(){
     return this.AiSelection;
+  }
+
+  get outcome(){
+    return this._outcome;
   }
 
   constructor(private router: Router) {
@@ -36,10 +41,25 @@ export class RockPaperScissorService {
     //this stores the selection being pushed over from the compnent into the variable above
     this._selection = option;
     this.AiSelection = this.AiChoice[(Math.random() * this.AiChoice.length) | 0];
+    this.calulatewinner();
     this.router.navigateByUrl("/result");
   })
  }
 
- 
+ calulatewinner(){
+  if (this.AiSelection == this._selection)
+  {
+    this._outcome = 'draw';
+  }
+  else if (this._selection === 'rock' ){
+    this.AiSelection === 'paper' ? this._outcome = 'lose' : this._outcome = 'win';
+  }
+  else if (this._selection === 'paper' ){
+    this.AiSelection === 'scissors' ? this._outcome = 'lose' : this._outcome = 'win'
+  }
+ else if (this._selection === 'scissors' ){
+   this.AiSelection === 'rock' ? this._outcome = 'lose' : this._outcome = 'win'
+  }
+}
 
 }
