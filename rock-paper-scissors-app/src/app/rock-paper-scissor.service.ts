@@ -57,7 +57,7 @@ export class RockPaperScissorService {
   else if (this._selection === 'paper' ){
     this.AiSelection === 'scissors' ? this._outcome = 'lose' : this._outcome = 'win'
   }
- else if (this._selection === 'scissors' ){
+  else if (this._selection === 'scissors' ){
    this.AiSelection === 'rock' ? this._outcome = 'lose' : this._outcome = 'win'
   }
 }
