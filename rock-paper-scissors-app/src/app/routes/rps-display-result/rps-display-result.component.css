@@ -6,6 +6,11 @@
     background-color: grey;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.splitter{
+    display: flex;
 }
 
 .choice{

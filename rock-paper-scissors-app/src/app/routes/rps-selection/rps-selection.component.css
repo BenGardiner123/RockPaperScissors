@@ -33,3 +33,15 @@ button{
     width: 100px;
     height: 40px;
 }
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.grey {
+    background-color: grey;
+}
