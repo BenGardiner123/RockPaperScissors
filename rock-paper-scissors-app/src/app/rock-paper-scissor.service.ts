@@ -38,12 +38,12 @@ export class RockPaperScissorService {
    }
 
 
-  commitSelection(option: "rock" | "paper" | "scissors"){
-    let request = this.httpClient.post<serverResponse>("https://localhost:5001/rockPaperScissors/",
+  commitSelection(option: "Rock" | "Paper" | "Scissors"){
+    let request = this.httpClient.post<serverResponse>("http://localhost:5000/rockPaperScissors/",
     {
       playerChoice: option,
     });
-    request.pipe(delay(3000)).subscribe((response) => {
+    request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
     this._selection = response.playerChoice;
     this.AiSelection = response.cpuChoice;

@@ -1,4 +1,3 @@
-
 export interface serverResponse {
     playerChoice: string,
     cpuChoice: string,
