@@ -47,7 +47,13 @@ export class RockPaperScissorService {
     this.AiSelection = response.cpuChoice;
     this._outcome = response.result;
     this.router.navigateByUrl("/result");
-  })
+    }, (error) => {
+          if(error.status == 401){
+            alert("Login failed due to inccorect email or wrong password")
+          }
+          
+  });
+
  }
 
   
