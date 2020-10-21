@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RpsSelectionComponent } from './routes/rps-selection/rps-selection.component';
 import { RpsDisplayResultComponent } from './routes/rps-display-result/rps-display-result.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RpsDisplayResultComponent } from './routes/rps-display-result/rps-displ
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
