@@ -13,7 +13,6 @@ import { serverResponse } from './serverResonse';
 
 export class RockPaperScissorService {
 
-  
   private AiSelection: string | null;
 
   private _selection: string | null;
@@ -34,7 +33,6 @@ export class RockPaperScissorService {
 
   constructor(private router: Router, private httpClient: HttpClient) {
     this.httpClient = httpClient;
-    
    }
 
 
