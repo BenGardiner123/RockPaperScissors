@@ -49,9 +49,18 @@ export class RockPaperScissorService {
     this.router.navigateByUrl("/result");
     }, (error) => {
           if(error.status == 401){
-            alert("Login failed due to inccorect email or wrong password")
+            alert("Sorry - you are not authorized to do that")
           }
-          
+          if(error.status == 405){
+            alert("The method exists but not supported by the target - potentially incorrct formating")
+          }
+          if(error.status == 404){
+            alert("The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.")
+          }
+          if(error.status == 500){
+            alert("It is likely that some undetermined error occured.. internally. Have you tried switching it off and on again? ")
+          }
+
   });
 
  }

@@ -1,42 +1,52 @@
 .container{
     height: 400px;
-    width: 1000px;
+    width: 1200px;
     border: 1px black solid;
     background-color: grey;
     display: inline-block;
 }
 
 .choiceContainer{
-    padding-left: 10px;
-    padding-top: 10px;
+    margin: 50px;
 }
 
 .choice{
     height: 200px;
     width: 200px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     display: inline-block;
 }
 
+
 .choice.rock{
-    border: 1px black solid;
-    background-color: red;
+    /* border: 1px black solid; */
+    background: url(https://i.ibb.co/VqKy2hT/rock.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 .choice.paper{
-    border: 1px black solid;
-    background-color: blue;
+    /* border: 1px black solid; */
+    background: url(https://i.ibb.co/zXMN3xJ/paper.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .choice.scissors{
-    border: 1px black solid;
-    background-color: green;
+    /* border: 1px black solid; */
+    background: url(https://i.ibb.co/BPxfRJD/scissors1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 button{
-    width: 100px;
+    width: 140px;
     height: 40px;
+    background-color: blue;
+    border-radius: 12px;
+    color: white;
 }
 
 .green {
