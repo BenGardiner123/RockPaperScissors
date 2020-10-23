@@ -5,6 +5,7 @@
     background-color: grey;
     display: inline-block;
     border-radius: 10px;
+    box-shadow: 8px 8px #33334d;
 }
 
 .choiceContainer{
