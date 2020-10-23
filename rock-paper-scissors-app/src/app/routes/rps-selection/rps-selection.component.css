@@ -4,6 +4,7 @@
     border: 1px black solid;
     background-color: grey;
     display: inline-block;
+    border-radius: 10px;
 }
 
 .choiceContainer{
@@ -44,9 +45,10 @@
 button{
     width: 140px;
     height: 40px;
-    background-color: blue;
+    background-color: dodgerblue;
     border-radius: 12px;
     color: white;
+    
 }
 
 .green {
