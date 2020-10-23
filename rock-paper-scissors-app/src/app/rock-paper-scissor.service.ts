@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { userSelection } from './userSelection';
-import { serverResponse } from './serverResonse';
+import { serverResponse } from './models/serverResonse';
 
 
 @Injectable({
