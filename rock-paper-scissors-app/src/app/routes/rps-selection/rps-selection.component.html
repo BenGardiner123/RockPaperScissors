@@ -1,7 +1,11 @@
 <div class="container">
         <div class="choiceContainer">
-            <div [ngStyle]="{'backgroundColor': rockSelected ? 'grey': 'grey'}" class="choice rock" (click)="chooseThis('Rock')">
-                
+            <div class="choice rock"
+            [ngClass]="{
+                'choice.rock-selected': rockSelected,
+                'choice rock': !rockSelected   
+                }"  (click)="chooseThis('Rock')">
+            
             </div>
 
             <div [ngStyle]="{'backgroundColor': paperSelected ? 'grey': 'grey'}" class="choice paper" (click)="chooseThis('Paper')">
