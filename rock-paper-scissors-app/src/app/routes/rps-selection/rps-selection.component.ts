@@ -12,6 +12,7 @@ export class RpsSelectionComponent implements OnInit {
  public paperSelected = false;
  public scissorsSelected = false;
 
+
   constructor( private rockPaperScissorService: RockPaperScissorService) { 
     
   }

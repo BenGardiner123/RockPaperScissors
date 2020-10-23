@@ -29,7 +29,7 @@
     
 }
 
-.choice.rock.selected{
+.choice.rock-selected{
     /* border: 1px black solid; */
     background: url(https://i.ibb.co/Rz3HgyV/rock-selected.png);
     background-repeat: no-repeat;
