@@ -4,13 +4,13 @@
 
     <div class="splitter">
         <div class="choice userSelection">
-            <h2>your selection was {{rockPaperScissorsService.selection}}</h2>
-            <!-- need to add ngif do display the right img -->
+            <img [src]="userBackground">
         </div>
-    
+        
+        <div class="vs"><h1>VS</h1></div>
+
         <div class="choice AiSelection">
-            <h2>The Ai Chose {{rockPaperScissorsService.aiselection}}</h2>
-            <!-- need to add ngif do display the right img -->
+            <img src={{aiBackground}}>
         </div>
     </div>
    

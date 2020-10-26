@@ -1,17 +1,32 @@
 .container{
     height: 400px;
-    width: 1000px;
+    width: 1200px;
     display: flex;
     border: 1px black solid;
     background-color: grey;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 8px 8px #33334d;
 }
 
 .splitter{
     display: flex;
+    border: 1px black solid;
+    margin-bottom: 57px;
 }
+
+.vs{
+    border: 1px black solid;
+    padding-left: 132px;
+    padding-right: 132px;
+}
+
+.vs h1{
+    padding-top: 20px;
+}
+    
 
 .choice{
     border: 1px black solid;
@@ -26,6 +41,12 @@
     margin: 10px;
     height: 200px;
     width: 200px;
+    
+}
+
+img{
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .choice.AiSelection{
@@ -36,5 +57,6 @@
 }
 
 .buttonBox{
+   
     border: 1px black solid;
 }
