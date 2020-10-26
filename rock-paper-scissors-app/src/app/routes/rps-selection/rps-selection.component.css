@@ -44,9 +44,24 @@
     background-size: cover;
 }
 
+.choice.paper.selected{
+    /* border: 1px black solid; */
+    background: url(https://i.ibb.co/k8YJ9tx/paper-selected.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 .choice.scissors{
     /* border: 1px black solid; */
     background: url(https://i.ibb.co/BPxfRJD/scissors1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.choice.scissors.selected{
+    /* border: 1px black solid; */
+    background: url(https://i.ibb.co/bQnp2CV/sciss-selected.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
