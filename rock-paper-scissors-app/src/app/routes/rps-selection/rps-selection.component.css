@@ -29,9 +29,10 @@
     
 }
 
-.choice.rock-selected{
+
+.choice.rock.selected{
     /* border: 1px black solid; */
-    background: url(https://i.ibb.co/Rz3HgyV/rock-selected.png);
+    background: url(https://i.ibb.co/K7PBjFC/rock-selected.png);
     background-repeat: no-repeat;
     background-size: cover;
 }

@@ -8,13 +8,16 @@ import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
 })
 export class RpsSelectionComponent implements OnInit {
 
- public rockSelected = false;
- public paperSelected = false;
- public scissorsSelected = false;
+ public rockSelected: boolean;
+ public paperSelected: boolean;
+ public scissorsSelected: boolean;
 
 
-  constructor( private rockPaperScissorService: RockPaperScissorService) { 
-    
+  constructor(private rockPaperScissorService: RockPaperScissorService) { 
+    this.rockSelected = false;
+    this.paperSelected = false;
+    this.scissorsSelected = false;
+   
   }
 
   ngOnInit(): void {
@@ -24,6 +27,7 @@ export class RpsSelectionComponent implements OnInit {
   chooseThis(option: "Rock" | "Paper" | "Scissors"){
     if (option == "Rock"){
       this.rockSelected = !this.rockSelected;
+
     }
     else if(option == "Paper")
     {

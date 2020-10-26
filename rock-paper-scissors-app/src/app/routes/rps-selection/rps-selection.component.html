@@ -1,20 +1,13 @@
 <div class="container">
         <div class="choiceContainer">
-            <div class="choice rock"
-            [ngClass]="{
-                'choice.rock-selected': rockSelected,
-                'choice rock': !rockSelected   
-                }"  (click)="chooseThis('Rock')">
-            
+
+            <div [ngClass]="{'choice rock': rockSelected, 'choice rock selected': !rockSelected}"(click)="chooseThis('Rock')">
             </div>
 
             <div [ngStyle]="{'backgroundColor': paperSelected ? 'grey': 'grey'}" class="choice paper" (click)="chooseThis('Paper')">
-                
             </div>
 
             <div [ngStyle]="{'backgroundColor': scissorsSelected ? 'grey': 'grey'}" class="choice scissors" (click)="chooseThis('Scissors')">
-                
-                
             </div>
 
         </div>
