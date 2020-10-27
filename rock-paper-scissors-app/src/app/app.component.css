@@ -31,3 +31,10 @@ span{
     font-size: x-large;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#leaderBoardBox{
+    position: relative;
+    left: 540px;
+    bottom: -13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
