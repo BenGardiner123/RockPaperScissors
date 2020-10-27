@@ -13,12 +13,12 @@
 
 .splitter{
     display: flex;
-    border: 1px black solid;
-    margin-bottom: 57px;
+    /* border: 1px black solid; */
+     margin-bottom: 20px; 
 }
 
 .vs{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     padding-left: 132px;
     padding-right: 132px;
 }
@@ -29,7 +29,7 @@
     
 
 .choice{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     height: 200px;
     width: 200px;
     margin-left: 10px;
@@ -37,7 +37,7 @@
 }
 
 .choice.userSelection{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     margin: 10px;
     height: 200px;
     width: 200px;
@@ -50,13 +50,22 @@ img{
 }
 
 .choice.AiSelection{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     margin: 10px;
     height: 200px;
     width: 200px;
 }
 
 .buttonBox{
-   
-    border: 1px black solid;
+    height: 100px;
+    /* border: 1px black solid;  */
+}
+
+button{
+    width: 140px;
+    height: 40px;
+    background-color: dodgerblue;
+    border-radius: 12px;
+    color: white;
+    
 }
