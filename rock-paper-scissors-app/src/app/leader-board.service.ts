@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { leaderboard } from './models/leaderboard';
+import { Leaderboard, LeaderboardEnvelope} from './models/leaderboard';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +9,16 @@ import { leaderboard } from './models/leaderboard';
 
 export class LeaderBoardService {
 
+  public leaderboards: Leaderboard[] = [];
+
   constructor(private router: Router, private httpClient: HttpClient) {
     this.httpClient = httpClient;
    }
 
 
  getLeaderboard(){
-    let request = this.httpClient.post<leaderboard>("http://localhost:5000/rockPaperScissors/Leaderboard",
-    {
-      playerChoice: option,
-    });
+    let request = this.httpClient.get<Leaderboard>("http://localhost:5000/rockPaperScissors/Leaderboard");
+    
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
     this._selection = response.playerChoice;

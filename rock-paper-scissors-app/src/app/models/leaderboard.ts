@@ -4,3 +4,7 @@ export interface Leaderboard
     winRatio: number,
     turnsPlayed: number;
 }
+
+export interface LeaderboardEnvelope {
+    leaderboards: Leaderboard[];
+}

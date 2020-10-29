@@ -20,6 +20,9 @@ export class LeaderboardDetailComponent implements OnInit {
 
   }
 
-
-
+  // this is where the method to get the leaderboard is - this goes to the rps-leaderboard component
+  // something like
+  showLeaderboard(){
+    this.leaderboardService.getLeaderboard();
+  }
 }
