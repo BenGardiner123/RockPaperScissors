@@ -7,7 +7,7 @@ import { RpsSelectionComponent } from './routes/rps-selection/rps-selection.comp
 const routes: Routes = [
   {path: "selection", component: RpsSelectionComponent},
   {path: "result", component: RpsDisplayResultComponent},
-  {path: "leaderboard", component: RpsLeaderboardComponent},
+  {path: "Leaderboard", component: RpsLeaderboardComponent},
 
 
   {path: "**", redirectTo: "selection"}

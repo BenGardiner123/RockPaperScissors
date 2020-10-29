@@ -1,6 +1,6 @@
-export interface leaderboard
+export interface Leaderboard
 {
-    username: string,
+    username: string | null,
     winRatio: number,
     turnsPlayed: number;
 }
