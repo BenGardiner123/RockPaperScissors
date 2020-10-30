@@ -9,7 +9,8 @@ import { Leaderboard, LeaderboardEnvelope} from './models/leaderboard';
 
 export class LeaderBoardService {
 
-  public leaderboards: Leaderboard[];
+  public leaderboards: LeaderboardEnvelope;
+ 
 
   constructor(private router: Router, private httpClient: HttpClient) {
     this.httpClient = httpClient;
@@ -21,7 +22,10 @@ export class LeaderBoardService {
     
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
-    this.leaderboards = response.leaderboards;
+    this.leaderboards = response;
+    console.log(response);
+    console.log(response.leaderboards);
+    console.log(this.leaderboards);
     this.router.navigateByUrl("/Leaderboard");
     }, (error) => {
           if(error.status == 401){

@@ -8,3 +8,4 @@ export interface Leaderboard
 export interface LeaderboardEnvelope {
     leaderboards: Leaderboard[];
 }
+
