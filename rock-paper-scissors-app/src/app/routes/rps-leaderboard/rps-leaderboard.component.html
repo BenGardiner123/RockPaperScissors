@@ -1,9 +1,15 @@
 <div class="container">
+
     <h1>Leader Board</h1>
 
-    <div>
+    <ul>
+        <li>
+            <app-leaderboard-detail *ngFor="let leaderboard of leaderboardService.leaderboards" [leaderboard]="leaderboard"></app-leaderboard-detail>
+        </li>
         
-    </div>
+    </ul>
+        
+    
 
     
 </div>

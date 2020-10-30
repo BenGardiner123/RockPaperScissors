@@ -15,7 +15,8 @@ import { LeaderboardDetailComponent } from './leaderboard-detail/leaderboard-det
     RpsSelectionComponent,
     RpsDisplayResultComponent,
     RpsLeaderboardComponent,
-    LeaderboardDetailComponent
+    LeaderboardDetailComponent, 
+    
   ],
   imports: [
     BrowserModule,

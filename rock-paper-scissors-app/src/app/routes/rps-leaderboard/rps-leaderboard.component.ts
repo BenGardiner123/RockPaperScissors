@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LeaderBoardService } from 'src/app/leader-board.service';
+import { Leaderboard } from 'src/app/models/leaderboard';
+
+
 
 @Component({
   selector: 'app-rps-leaderboard',
@@ -8,12 +11,21 @@ import { LeaderBoardService } from 'src/app/leader-board.service';
 })
 export class RpsLeaderboardComponent implements OnInit {
 
-  constructor( private leaderboardService: LeaderBoardService) { }
+
+
+  public leaderboardService: LeaderBoardService;
+
+  constructor(leaderboardService: LeaderBoardService) { 
+    this.leaderboardService = leaderboardService;
+    this.showLeaderboard();
+  }
 
   ngOnInit(): void {
-    // i think should be soemthing lijke this so on initilisation it makes the http get and gets the leaderboard
-    /* this.leaderboardService.getLeaders().subscribe(response => {
-      this.singleLeader = response */
+    
+  }
+
+  showLeaderboard(){
+    this.leaderboardService.getLeaderboard();
   }
 
 }

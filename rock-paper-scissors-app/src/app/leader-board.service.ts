@@ -9,7 +9,7 @@ import { Leaderboard, LeaderboardEnvelope} from './models/leaderboard';
 
 export class LeaderBoardService {
 
-  public leaderboards: Leaderboard[] = [];
+  public leaderboards: Leaderboard[];
 
   constructor(private router: Router, private httpClient: HttpClient) {
     this.httpClient = httpClient;
@@ -17,13 +17,11 @@ export class LeaderBoardService {
 
 
  getLeaderboard(){
-    let request = this.httpClient.get<Leaderboard>("http://localhost:5000/rockPaperScissors/Leaderboard");
+    let request = this.httpClient.get<LeaderboardEnvelope>("http://localhost:5000/rockPaperScissors/Leaderboard");
     
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
-    this._selection = response.playerChoice;
-    this.AiSelection = response.cpuChoice;
-    this._outcome = response.result;
+    this.leaderboards = response.leaderboards;
     this.router.navigateByUrl("/Leaderboard");
     }, (error) => {
           if(error.status == 401){
@@ -41,7 +39,7 @@ export class LeaderBoardService {
 
   });
 
-
+ }
 
 
 }
