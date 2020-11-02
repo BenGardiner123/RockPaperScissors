@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    width: 1050px;
+    /* border: 1px solid black; */
+    background-color:#999999;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.Username{
+    
+    padding-top: 10px;
+    text-align: left;
+    padding-left: 10px;
+    /* border: 1px solid black; */
+    width: 350px;
+}
+
+.winRatio{
+    margin-left: 71px;
+    /* border: 1px solid black; */
+    width: 250px;
+}
+
+.TurnsPlayed{
+    margin-left: 82px;
+    width: 250px;
+    /* border: 1px solid black; */
+}

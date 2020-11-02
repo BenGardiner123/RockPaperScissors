@@ -1,15 +1,28 @@
 <div class="container">
-
-    <h1>Leader Board</h1>
-
-    <ul>
-        <li>
-            <app-leaderboard-detail *ngFor="let leaderboard of leaderboardService.leaderboards" [leaderboard]="leaderboard"></app-leaderboard-detail>
-        </li>
-        
-    </ul>
-        
+    <div class="heading">
+        <h1>Leader Board</h1>
+    </div>
     
+    <div class="headings">
+        <div id="heading-username"><h1>Username</h1></div>
+        <div id="heading-winRatio"><h1>Win Ratio</h1></div>
+        <div id="heading-turnsPlayed"><h1>Turns Played</h1></div>
+    </div>
 
+    <div class="content">
+
+        <div class="detail-content">
+            
+            <div>
+                <app-leaderboard-detail *ngFor="let leaderboard of leaderboardService.leaderboards" [leaderboard]="leaderboard"></app-leaderboard-detail>
+
+            </div>
+                
+            
+            
+        </div>
+
+    </div>
+  
     
 </div>

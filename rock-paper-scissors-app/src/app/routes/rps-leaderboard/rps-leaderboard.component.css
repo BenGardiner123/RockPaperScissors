@@ -1,12 +1,54 @@
 .container{
-    height: 400px;
+    height: 600px;
     width: 1200px;
     display: flex;
-    border: 1px black solid;
+    /* border: 1px black solid; */
     background-color: grey;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 8px 8px #33334d;
+    
+}
+
+.heading{
+    font-size: 25px;
+    position: relative;
+    right: 400px;
+    bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headings{
+    margin-left: 27px;
+    display: flex;
+    justify-content: space-between;
+    width: 1029px;
+    /* border: solid black 1px; */
+}
+
+.content{
+    padding-left: 51px;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+
+li{
+   margin-bottom: 10px; 
+}
+
+#heading-username{
+    padding-left: 10px;
+}
+
+#heading-winRatio{
+    margin-left: 196px;
+}
+
+#heading-turnsPlayed{
+    margin-left: 0px;
+}
+
+
+ul{
+    padding-top: 10px;
 }
