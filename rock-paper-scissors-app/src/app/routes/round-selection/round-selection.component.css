@@ -8,15 +8,18 @@
     box-shadow: 8px 8px #33334d;
 }
 
-.choiceContainer{
+.roundChoiceContainer{
+     border: 1px black solid; 
     margin: 50px;
 }
 
 .choice{
-    height: 200px;
-    width: 200px;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-top: 50px;
+    border: 1px black solid;
+    height: 75px;
+    width: 75px;
+    margin-left: 80px;
+    margin-right: 80px;
     display: inline-block;
 }
 
@@ -42,4 +45,13 @@ choice.five{
 
 choice.five.selected{
     background-color: lightgray;
+}
+
+button{
+    width: 140px;
+    height: 40px;
+    background-color: dodgerblue;
+    border-radius: 12px;
+    color: white;
+    
 }
