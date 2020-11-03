@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RoundSelectionComponent } from './routes/round-selection/round-selection.component';
 import { RpsDisplayResultComponent } from './routes/rps-display-result/rps-display-result.component';
 import { RpsLeaderboardComponent } from './routes/rps-leaderboard/rps-leaderboard.component';
 import { RpsSelectionComponent } from './routes/rps-selection/rps-selection.component';
@@ -8,9 +9,10 @@ const routes: Routes = [
   {path: "selection", component: RpsSelectionComponent},
   {path: "result", component: RpsDisplayResultComponent},
   {path: "Leaderboard", component: RpsLeaderboardComponent},
+  {path: "Rounds", component: RoundSelectionComponent},
 
 
-  {path: "**", redirectTo: "selection"}
+  {path: "**", redirectTo: "Rounds"}
 ];
 
 @NgModule({

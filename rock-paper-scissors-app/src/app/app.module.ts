@@ -8,6 +8,7 @@ import { RpsDisplayResultComponent } from './routes/rps-display-result/rps-displ
 import { HttpClientModule } from '@angular/common/http';
 import { RpsLeaderboardComponent } from './routes/rps-leaderboard/rps-leaderboard.component';
 import { LeaderboardDetailComponent } from './leaderboard-detail/leaderboard-detail.component';
+import { RoundSelectionComponent } from './routes/round-selection/round-selection.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LeaderboardDetailComponent } from './leaderboard-detail/leaderboard-det
     RpsSelectionComponent,
     RpsDisplayResultComponent,
     RpsLeaderboardComponent,
-    LeaderboardDetailComponent, 
+    LeaderboardDetailComponent,
+    RoundSelectionComponent, 
     
   ],
   imports: [

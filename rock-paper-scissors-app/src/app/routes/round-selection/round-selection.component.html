@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="roundChoiceContainer">
+
+        <div [ngClass]="!oneSelected ? 'choice one' : 'choice one selected'"(click)="chooseThisRound('1')" >
+            <h1>1</h1>
+            <span>Round</span>
+        </div>
+            
+        <div [ngClass]="!threeSelected ? 'choice three' : 'choice three selected'"(click)="chooseThisRound('3')">
+            <h1>3</h1>
+            <span>Rounds</span>
+        </div>
+           
+        <div [ngClass]="!fiveSelected ? 'choice five' : 'choice five selected'"(click)="chooseThisRound('5')"> 
+            <h1>5</h1>
+            <span>Rounds</span>
+        </div>
+
+    </div>
+
+    <div>
+        <button class="shootButton" (click)="makeRoundSelection()">Shoot!</button>
+    </div>
+
+</div>
