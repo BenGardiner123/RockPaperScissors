@@ -7,3 +7,39 @@
     border-radius: 10px;
     box-shadow: 8px 8px #33334d;
 }
+
+.choiceContainer{
+    margin: 50px;
+}
+
+.choice{
+    height: 200px;
+    width: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+choice.one{
+    color: black;
+}
+
+choice.one.selected{
+    background-color: lightgray;
+}
+
+choice.three{
+    color: black;
+}
+
+choice.three.selected{
+    background-color: lightgray;
+}
+
+choice.five{
+    color: black;
+}
+
+choice.five.selected{
+    background-color: lightgray;
+}
