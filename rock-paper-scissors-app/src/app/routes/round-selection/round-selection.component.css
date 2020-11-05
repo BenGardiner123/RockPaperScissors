@@ -1,7 +1,7 @@
 .container{
     height: 400px;
     width: 1200px;
-    border: 1px black solid;
+    /* border: 1px black solid; */
     background-color: grey;
     display: inline-block;
     border-radius: 10px;
@@ -9,13 +9,13 @@
 }
 
 .roundChoiceContainer{
-     border: 1px black solid; 
+     /* border: 1px black solid;  */
     margin: 50px;
 }
 
 .choice{
     padding-top: 50px;
-    border: 1px black solid;
+    /* border: 1px black solid; */
     height: 75px;
     width: 75px;
     margin-left: 80px;

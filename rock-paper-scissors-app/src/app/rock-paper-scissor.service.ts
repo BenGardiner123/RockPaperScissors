@@ -12,6 +12,8 @@ import { serverResponse } from './models/serverResonse';
 
 export class RockPaperScissorService {
 
+  public userName: string | null;
+
   private AiSelection: string | null;
 
   private _selection: string | null;
@@ -30,6 +32,11 @@ export class RockPaperScissorService {
     return this._outcome;
   }
 
+  get username(){
+    return this.userName;
+  }
+
+
   constructor(private router: Router, private httpClient: HttpClient) {
     this.httpClient = httpClient;
    }
@@ -38,6 +45,7 @@ export class RockPaperScissorService {
   commitSelection(option: "Rock" | "Paper" | "Scissors"){
     let request = this.httpClient.post<serverResponse>("http://localhost:5000/rockPaperScissors/",
     {
+      username: this.userName, 
       playerChoice: option,
     });
     request.subscribe((response) => {
@@ -45,6 +53,7 @@ export class RockPaperScissorService {
     this._selection = response.playerChoice;
     this.AiSelection = response.cpuChoice;
     this._outcome = response.result;
+    this.userName = response.username;
     this.router.navigateByUrl("/result");
     }, (error) => {
           if(error.status == 401){
