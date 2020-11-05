@@ -24,14 +24,19 @@ export class RoundSelectionComponent implements OnInit {
   chooseThisRound(option: '1'|'3'|'5'){
     if (option == '1'){
       this.oneSelected = !this.oneSelected;
-  
+      this.threeSelected = false;
+      this.fiveSelected = false;
     }
     else if(option == '3')
     {
       this.threeSelected = !this.threeSelected;
+      this.oneSelected = false;
+      this.fiveSelected = false;
     }
     else if(option == '5')
     {
+      this.oneSelected = false;
+      this.threeSelected = false;
       this.fiveSelected = !this.fiveSelected;
     }
 

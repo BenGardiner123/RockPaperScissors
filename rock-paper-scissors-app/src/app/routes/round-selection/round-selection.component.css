@@ -1,7 +1,7 @@
 .container{
     height: 400px;
     width: 1200px;
-    /* border: 1px black solid; */
+    border: 1px black solid; 
     background-color: grey;
     display: inline-block;
     border-radius: 10px;
@@ -9,42 +9,49 @@
 }
 
 .roundChoiceContainer{
-     /* border: 1px black solid;  */
+    border: 1px black solid;  
     margin: 50px;
 }
 
 .choice{
-    padding-top: 50px;
-    /* border: 1px black solid; */
-    height: 75px;
-    width: 75px;
+    margin-top: 50px;
+    border: 1px black solid; 
+    height: 100px;
+    width: 100px;
     margin-left: 80px;
     margin-right: 80px;
     display: inline-block;
 }
 
-choice.one{
+.choice.one{
     color: black;
 }
 
-choice.one.selected{
-    background-color: lightgray;
+.choice.one.selected{
+    background-color: #888f99;
+    border: white 2px solid;
+    border-radius: 2px;
 }
 
-choice.three{
+.choice.three{
     color: black;
 }
 
-choice.three.selected{
-    background-color: lightgray;
+.choice.three.selected{
+    background-color: #888f99;
+    border: white 2px solid;
+    border-radius: 2px;
+    
 }
 
-choice.five{
+.choice.five{
     color: black;
 }
 
-choice.five.selected{
-    background-color: lightgray;
+.choice.five.selected{
+    background-color: #888f99;
+    border: white 2px solid;
+    border-radius: 2px;
 }
 
 button{
