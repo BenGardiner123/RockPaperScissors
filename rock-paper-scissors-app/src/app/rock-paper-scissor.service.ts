@@ -5,6 +5,7 @@ import { delay } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { serverResponse } from './models/serverResonse';
 import { Round } from './models/round';
+import { RoundService } from './round.service';
 
 
 @Injectable({
@@ -40,12 +41,13 @@ export class RockPaperScissorService {
   }
 
 
-  constructor(private router: Router, private httpClient: HttpClient) {
+  constructor(private router: Router, private httpClient: HttpClient, private roundService:RoundService) {
     this.httpClient = httpClient;
    }
 
 
   commitSelection(option: "Rock" | "Paper" | "Scissors"){
+    this.roundService.roundCounter =  this.roundService.roundCounter + 1;
 
     let request = this.httpClient.post<serverResponse>("http://localhost:5000/rockPaperScissors/",
     {
@@ -58,7 +60,8 @@ export class RockPaperScissorService {
     this.AiSelection = response.cpuChoice;
     this._outcome = response.result;
     this.userName = response.username;
-    this.router.navigateByUrl("/result");
+    // if (this.roundService.roundCounter == this.roundService.roundLimit)
+    this.router.navigateByUrl("/Result");
     }, (error) => {
           if(error.status == 401){
             alert("Sorry - you are not authorized to do that")

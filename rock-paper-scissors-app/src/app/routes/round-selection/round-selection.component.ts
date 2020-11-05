@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RoundService } from 'src/app/round.service';
 
 @Component({
@@ -11,8 +12,9 @@ export class RoundSelectionComponent implements OnInit {
   public oneSelected: boolean;
   public threeSelected: boolean;
   public fiveSelected: boolean;
+ 
 
-  constructor(private roundService: RoundService) {
+  constructor(private router:Router, private roundService: RoundService) {
     this.oneSelected = false;
     this.threeSelected = false;
     this.fiveSelected = false;
@@ -52,9 +54,9 @@ export class RoundSelectionComponent implements OnInit {
     }
     else if(this.fiveSelected){
       this.roundService.commitSelection(5);
-    
-  }
-  
+    }
+    this.router.navigateByUrl("/selection");
+
 }
 
 }

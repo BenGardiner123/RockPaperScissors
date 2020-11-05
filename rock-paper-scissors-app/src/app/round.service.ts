@@ -11,10 +11,10 @@ import { RockPaperScissorService } from './rock-paper-scissor.service';
 export class RoundService {
 
   public rounds: RoundEnvelope;
-  public roundCounter: number;
+  public roundCounter: number = 1;
   public roundLimit: number;
 
-  constructor(private rockPaperScissorService:RockPaperScissorService) { }
+  constructor() { }
 
   commitSelection(roundNum: 1 | 3 | 5){
     this.roundLimit = roundNum;

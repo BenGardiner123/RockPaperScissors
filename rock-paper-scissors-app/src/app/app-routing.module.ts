@@ -6,8 +6,8 @@ import { RpsLeaderboardComponent } from './routes/rps-leaderboard/rps-leaderboar
 import { RpsSelectionComponent } from './routes/rps-selection/rps-selection.component';
 
 const routes: Routes = [
-  {path: "selection", component: RpsSelectionComponent},
-  {path: "result", component: RpsDisplayResultComponent},
+  {path: "Selection", component: RpsSelectionComponent},
+  {path: "Result", component: RpsDisplayResultComponent},
   {path: "Leaderboard", component: RpsLeaderboardComponent},
   {path: "Rounds", component: RoundSelectionComponent},
 
