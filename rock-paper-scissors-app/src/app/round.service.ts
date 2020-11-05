@@ -8,15 +8,18 @@ import { RockPaperScissorService } from './rock-paper-scissor.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class RoundService {
 
-  public rounds: RoundEnvelope;
-  public roundCounter: number = 1;
-  public roundLimit: number;
+  
+  public roundCounter: number
+  public roundLimit: string
 
-  constructor() { }
+  constructor() {
 
-  commitSelection(roundNum: 1 | 3 | 5){
+   }
+
+  commitSelection(roundNum: '1' | '3' | '5'){
     this.roundLimit = roundNum;
   }
 

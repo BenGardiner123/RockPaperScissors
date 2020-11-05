@@ -4,3 +4,5 @@ export interface serverResponse {
     cpuChoice: string,
     result: string;
  }
+
+ 

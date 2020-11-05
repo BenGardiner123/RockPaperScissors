@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoundService } from 'src/app/round.service';
 
@@ -8,6 +8,8 @@ import { RoundService } from 'src/app/round.service';
   styleUrls: ['./round-selection.component.css']
 })
 export class RoundSelectionComponent implements OnInit {
+
+  
 
   public oneSelected: boolean;
   public threeSelected: boolean;
@@ -47,15 +49,15 @@ export class RoundSelectionComponent implements OnInit {
 
   makeRoundSelection(){
     if (this.oneSelected){
-      this.roundService.commitSelection(1);
+      this.roundService.commitSelection('1');
     }
     else if(this.threeSelected){
-      this.roundService.commitSelection(3);
+      this.roundService.commitSelection('3');
     }
     else if(this.fiveSelected){
-      this.roundService.commitSelection(5);
+      this.roundService.commitSelection('5');
     }
-    this.router.navigateByUrl("/selection");
+    this.router.navigateByUrl("/Selection");
 
 }
 

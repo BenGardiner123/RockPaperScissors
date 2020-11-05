@@ -47,8 +47,6 @@ export class RockPaperScissorService {
 
 
   commitSelection(option: "Rock" | "Paper" | "Scissors"){
-    this.roundService.roundCounter =  this.roundService.roundCounter + 1;
-
     let request = this.httpClient.post<serverResponse>("http://localhost:5000/rockPaperScissors/",
     {
       username: this.userName, 
