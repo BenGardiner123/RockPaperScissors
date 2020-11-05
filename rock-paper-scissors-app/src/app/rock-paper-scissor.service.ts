@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { serverResponse } from './models/serverResonse';
+import { Round } from './models/round';
 
 
 @Injectable({
@@ -11,6 +12,8 @@ import { serverResponse } from './models/serverResonse';
 })
 
 export class RockPaperScissorService {
+
+  public rounds: Round[] = [];
 
   public userName: string | null;
 
@@ -43,6 +46,7 @@ export class RockPaperScissorService {
 
 
   commitSelection(option: "Rock" | "Paper" | "Scissors"){
+
     let request = this.httpClient.post<serverResponse>("http://localhost:5000/rockPaperScissors/",
     {
       username: this.userName, 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RoundService } from 'src/app/round.service';
 
 @Component({
   selector: 'app-round-selection',
@@ -11,7 +12,7 @@ export class RoundSelectionComponent implements OnInit {
   public threeSelected: boolean;
   public fiveSelected: boolean;
 
-  constructor() {
+  constructor(private roundService: RoundService) {
     this.oneSelected = false;
     this.threeSelected = false;
     this.fiveSelected = false;
@@ -43,11 +44,17 @@ export class RoundSelectionComponent implements OnInit {
   }
 
   makeRoundSelection(){
-    // this is where the info from the selection box is transferred to the service.
+    if (this.oneSelected){
+      this.roundService.commitSelection(1);
+    }
+    else if(this.threeSelected){
+      this.roundService.commitSelection(3);
+    }
+    else if(this.fiveSelected){
+      this.roundService.commitSelection(5);
     
-
-
   }
+  
 }
 
-
+}
