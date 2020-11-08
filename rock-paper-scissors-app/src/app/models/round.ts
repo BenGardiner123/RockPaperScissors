@@ -1,8 +1,7 @@
-export interface Round {
+export interface RoundCheckRespone {
     username: string;
-    playerChoice: string;
     roundLimit: number;
-    roundCounter: number;
+    currentRound: number;
     DateTimeStarted: Date;
     
  }
@@ -10,3 +9,11 @@ export interface Round {
  export interface RoundEnvelope {
     rounds: Round[];
  }
+
+ export interface Round{
+   username: string;
+   playerChoice: string;
+   roundLimit: number;
+   currentRound: number;
+   DateTimeStarted: Date;
+}

@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { serverResponse } from './models/serverResonse';
-import { Round } from './models/round';
+import { Round, RoundCheckRespone } from './models/round';
 import { RoundService } from './round.service';
 
 
@@ -16,7 +16,7 @@ export class RockPaperScissorService {
 
   public rounds: Round[] = [];
 
-  public userName: string | null;
+  public userName: string;
 
   private AiSelection: string | null;
 
@@ -44,6 +44,17 @@ export class RockPaperScissorService {
   constructor(private router: Router, private httpClient: HttpClient, private roundService:RoundService) {
     this.httpClient = httpClient;
    }
+
+  startGame(username:string, numRounds: number, startDateTime:Date){
+    let request = this.httpClient.post<RoundCheckRespone>("http://localhost:5000/rockPaperScissors/NewGame",
+    {
+      username: this.userName, 
+      roundLimit: this.roundService.roundLimit, 
+      currentRound: this.roundService.roundCounter,
+      DateTimeStarted: this.roundService.StartDateTime
+      // thinking the datetime needs to be created in the round service and then passed aroud fro there.
+    });
+  }
 
 
   commitSelection(option: "Rock" | "Paper" | "Scissors"){

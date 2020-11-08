@@ -29,7 +29,7 @@ export class RpsSelectionComponent implements OnInit {
   chooseThis(option: "Rock" | "Paper" | "Scissors"){
     if (option == "Rock"){
       this.rockSelected = !this.rockSelected;
-
+      // need to add the logic to turn off the other buttons here - currently i can select multiple choices.
     }
     else if(option == "Paper")
     {
