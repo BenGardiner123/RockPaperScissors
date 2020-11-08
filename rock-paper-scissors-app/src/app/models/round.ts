@@ -3,7 +3,6 @@ export interface RoundCheckRespone {
     roundLimit: number;
     currentRound: number;
     DateTimeStarted: Date;
-    
  }
 
  export interface RoundEnvelope {
