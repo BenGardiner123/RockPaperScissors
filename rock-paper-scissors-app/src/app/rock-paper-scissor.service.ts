@@ -50,8 +50,7 @@ export class RockPaperScissorService {
     {
       username: this.userName, 
       roundLimit: this.roundService.roundLimit, 
-      currentRound: this.roundService.roundCounter,
-      DateTimeStarted: this.roundService.StartDateTime
+      DateTimeStarted: this.roundService.StartDateTime,
       // thinking the datetime needs to be created in the round service and then passed aroud fro there.
     });
   }

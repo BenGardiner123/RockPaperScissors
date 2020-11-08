@@ -11,9 +11,13 @@ import { RockPaperScissorService } from './rock-paper-scissor.service';
 
 export class RoundService {
 
-  public StartDateTime: Date;
+  private _StartDateTime: Date;
   public roundCounter: number
   public roundLimit: string
+
+  get StartDateTime(){
+    return this._StartDateTime;
+  }
 
   constructor() {
 
@@ -21,7 +25,7 @@ export class RoundService {
 
   commitSelection(roundNum: '1' | '3' | '5'){
     var specificNewGameTime = new Date();
-    this.StartDateTime = specificNewGameTime;
+    this._StartDateTime = specificNewGameTime;
     this.roundLimit = roundNum;
   }
 
