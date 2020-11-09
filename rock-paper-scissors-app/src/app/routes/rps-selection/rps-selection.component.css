@@ -12,10 +12,10 @@
     margin: 50px;
 }
 
-#roundCounter{
+.roundCounter{
     position: absolute;
-    right: 400px;
-    bottom: 0px;
+    right: 1044px;
+    bottom: 610px;
 }
 
 .choice{

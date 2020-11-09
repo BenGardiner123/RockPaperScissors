@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RockPaperScissorService } from './rock-paper-scissor.service';
+import { RoundService } from './round.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,12 @@ import { RockPaperScissorService } from './rock-paper-scissor.service';
 })
 export class AppComponent {
 
-  constructor(private rockPaperScissorsService: RockPaperScissorService){
+  constructor(private roundService: RoundService){
  
   }
   
   onKeyUp(value: string){
-    this.rockPaperScissorsService.userName = value;
+    this.roundService.username = value;
   }
   
 }

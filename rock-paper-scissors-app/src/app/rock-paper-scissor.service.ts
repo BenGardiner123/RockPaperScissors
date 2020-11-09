@@ -16,13 +16,17 @@ export class RockPaperScissorService {
 
   public rounds: Round[] = [];
 
-  public userName: string;
+  public username: string | null;
 
   private AiSelection: string | null;
 
   private _selection: string | null;
   
   private _outcome: string | null;
+
+  public confirmedUserName: string;
+  p
+
 
   get selection(){
     return this._selection;
@@ -36,30 +40,18 @@ export class RockPaperScissorService {
     return this._outcome;
   }
 
-  get username(){
-    return this.userName;
-  }
+ 
 
 
   constructor(private router: Router, private httpClient: HttpClient, private roundService:RoundService) {
     this.httpClient = httpClient;
    }
 
-  startGame(username:string, numRounds: number, startDateTime:Date){
-    let request = this.httpClient.post<RoundCheckRespone>("http://localhost:5000/rockPaperScissors/NewGame",
-    {
-      username: this.userName, 
-      roundLimit: this.roundService.roundLimit, 
-      DateTimeStarted: this.roundService.StartDateTime,
-      // thinking the datetime needs to be created in the round service and then passed aroud fro there.
-    });
-  }
 
-
-  commitSelection(option: "Rock" | "Paper" | "Scissors"){
+    commitSelection(option: "Rock" | "Paper" | "Scissors"){
     let request = this.httpClient.post<serverResponse>("http://localhost:5000/rockPaperScissors/",
     {
-      username: this.userName, 
+      username: this.username, 
       playerChoice: option,
     });
     request.subscribe((response) => {
@@ -67,7 +59,7 @@ export class RockPaperScissorService {
     this._selection = response.playerChoice;
     this.AiSelection = response.cpuChoice;
     this._outcome = response.result;
-    this.userName = response.username;
+    this.username = response.username;
     // if (this.roundService.roundCounter == this.roundService.roundLimit)
     this.router.navigateByUrl("/Result");
     }, (error) => {
@@ -86,7 +78,7 @@ export class RockPaperScissorService {
 
   });
 
- }
+ } 
 
   
 

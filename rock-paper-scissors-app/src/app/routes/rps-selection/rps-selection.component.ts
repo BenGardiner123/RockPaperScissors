@@ -42,14 +42,22 @@ export class RpsSelectionComponent implements OnInit {
   }
 
   makeSelection(){
-    if (this.rockSelected){
-      this.rockPaperScissorService.commitSelection("Rock");
+    if(this.roundService.username == null)
+    {
+      alert("Please enter a username before makign asselection");
+      return;
     }
-    else if(this.paperSelected){
-      this.rockPaperScissorService.commitSelection("Paper");
+    else{
+      if (this.rockSelected){
+        this.rockPaperScissorService.commitSelection("Rock");
+      }
+      else if(this.paperSelected){
+        this.rockPaperScissorService.commitSelection("Paper");
+      }
+      else if(this.scissorsSelected){
+        this.rockPaperScissorService.commitSelection("Scissors");
     }
-    else if(this.scissorsSelected){
-      this.rockPaperScissorService.commitSelection("Scissors");
+  
   }
 
 }

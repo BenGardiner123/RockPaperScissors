@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
 import { RoundService } from 'src/app/round.service';
 
 @Component({
@@ -48,6 +49,8 @@ export class RoundSelectionComponent implements OnInit {
   }
 
   makeRoundSelection(){
+    
+   
     if (this.oneSelected){
       this.roundService.commitSelection('1');
     }
