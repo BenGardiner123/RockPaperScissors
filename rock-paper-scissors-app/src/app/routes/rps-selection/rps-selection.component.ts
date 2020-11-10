@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
-import { RoundService } from 'src/app/round.service';
+
 
 @Component({
   selector: 'app-rps-selection',
@@ -12,10 +12,10 @@ export class RpsSelectionComponent implements OnInit {
  public rockSelected: boolean;
  public paperSelected: boolean;
  public scissorsSelected: boolean;
- public roundService: RoundService;
+ 
 
 
-  constructor(private rockPaperScissorService: RockPaperScissorService, roundService: RoundService) { 
+  constructor(private rockPaperScissorService: RockPaperScissorService) { 
     this.rockSelected = false;
     this.paperSelected = false;
     this.scissorsSelected = false;
@@ -42,9 +42,9 @@ export class RpsSelectionComponent implements OnInit {
   }
 
   makeSelection(){
-    if(this.roundService.username == null)
+    if(this.rockPaperScissorService.username == null)
     {
-      alert("Please enter a username before makign asselection");
+      alert("Please enter a username before making a selection");
       return;
     }
     else{

@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
-import { RoundService } from 'src/app/round.service';
 
 @Component({
   selector: 'app-round-selection',
@@ -17,7 +16,7 @@ export class RoundSelectionComponent implements OnInit {
   public fiveSelected: boolean;
  
 
-  constructor(private router:Router, private roundService: RoundService) {
+  constructor(private router:Router, private rockPaperScissorService: RockPaperScissorService) {
     this.oneSelected = false;
     this.threeSelected = false;
     this.fiveSelected = false;
@@ -52,13 +51,13 @@ export class RoundSelectionComponent implements OnInit {
     
    
     if (this.oneSelected){
-      this.roundService.commitSelection('1');
+      this.rockPaperScissorService.commitRoundSelection('1');
     }
     else if(this.threeSelected){
-      this.roundService.commitSelection('3');
+      this.rockPaperScissorService.commitRoundSelection('3');
     }
     else if(this.fiveSelected){
-      this.roundService.commitSelection('5');
+      this.rockPaperScissorService.commitRoundSelection('5');
     }
     this.router.navigateByUrl("/Selection");
 
