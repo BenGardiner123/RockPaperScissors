@@ -14,11 +14,10 @@ import { Round, RoundCheckRespone } from './models/round';
 
 export class RockPaperScissorService {
 
-  
   private _StartDateTime: Date | null;
   private _roundCounter: number | null;
   private _roundLimit: number | null;
-  private _username: string | null;
+  public username: string | null;
   private _AiSelection: string | null;
   private _selection: string | null;
   private _outcome: string | null;
@@ -35,10 +34,6 @@ export class RockPaperScissorService {
     return this._roundLimit;
   }
 
-  get username(){
-    return this._username;
-  }
-
   get aiselection(){
     return this._AiSelection;
   }
@@ -52,8 +47,6 @@ export class RockPaperScissorService {
   }
 
  
-
-
   constructor(private router: Router, private httpClient: HttpClient) {
     this.httpClient = httpClient;
    }
@@ -75,8 +68,12 @@ export class RockPaperScissorService {
     request.subscribe((response) => {
       //this stores the selection being pushed over from the compnent into the variable above
       console.log(response);
+      this.username = response.username
+      this._roundLimit = response.roundLimit
+      this._roundCounter = response.currentRound
+      this._StartDateTime = response.DateTimeStarted
       // if (this.roundService.roundCounter == this.roundService.roundLimit)
-      this.router.navigateByUrl("/Result");
+      // this.router.navigateByUrl("/Result");
       }, (error) => {
             if(error.status == 401){
               alert("Sorry - you are not authorized to do that")
@@ -106,7 +103,7 @@ export class RockPaperScissorService {
     this._selection = response.playerChoice;
     this._AiSelection = response.cpuChoice;
     this._outcome = response.result;
-    this._username = response.username;
+    this.username = response.username;
     // if (this.roundService.roundCounter == this.roundService.roundLimit)
     this.router.navigateByUrl("/Result");
     }, (error) => {

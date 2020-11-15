@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Round } from './../../models/round';
+import { Component, Input, OnInit } from '@angular/core';
 import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
 
 
@@ -9,9 +10,15 @@ import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
 })
 export class RpsSelectionComponent implements OnInit {
 
+  @Input()
+  round: Round;
+
  public rockSelected: boolean;
  public paperSelected: boolean;
  public scissorsSelected: boolean;
+ public roundCounter: number = 1;
+ public roundLimit: number;
+
  
 
 
