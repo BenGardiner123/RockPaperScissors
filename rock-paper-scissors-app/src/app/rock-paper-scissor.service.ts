@@ -72,6 +72,7 @@ export class RockPaperScissorService {
       this._roundLimit = response.roundLimit
       this._roundCounter = response.currentRound
       this._StartDateTime = response.DateTimeStarted
+      this.router.navigateByUrl("/Selection");
       // if (this.roundService.roundCounter == this.roundService.roundLimit)
       // this.router.navigateByUrl("/Result");
       }, (error) => {
