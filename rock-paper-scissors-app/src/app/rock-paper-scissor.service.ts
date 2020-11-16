@@ -55,6 +55,7 @@ export class RockPaperScissorService {
     var specificNewGameTime = new Date();
     this._StartDateTime = specificNewGameTime;
     this._roundLimit = parseInt(roundNum);
+
   }
 
   startGame(username:string, numRounds: number, startDateTime:Date){
@@ -62,8 +63,8 @@ export class RockPaperScissorService {
     {
       username: this.username, 
       roundLimit: this.roundLimit, 
-      DateTimeStarted: this.startDateTime,
-     
+      DateTimeStarted: this.startDateTime, 
+      currentRound: this.roundCounter
     });
     request.subscribe((response) => {
       //this stores the selection being pushed over from the compnent into the variable above
@@ -94,10 +95,13 @@ export class RockPaperScissorService {
 
 
     commitSelection(option: "Rock" | "Paper" | "Scissors"){
-    let request = this.httpClient.post<serverResponse>("http://localhost:5000/rockPaperScissors/",
+    let request = this.httpClient.post<serverResponse>("http://localhost:5000/rockPaperScissors/Rounds",
     {
       username: this.username, 
       playerChoice: option,
+      roundLimit: this._roundLimit, 
+      currentRound: this._roundCounter,
+      DateTimeStarted: this._StartDateTime
     });
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
@@ -105,8 +109,17 @@ export class RockPaperScissorService {
     this._AiSelection = response.cpuChoice;
     this._outcome = response.result;
     this.username = response.username;
-    // if (this.roundService.roundCounter == this.roundService.roundLimit)
-    this.router.navigateByUrl("/Result");
+    this._roundCounter = response.roundCounter;
+    this._roundLimit = response.roundLimit;
+    if (this._roundCounter == this._roundLimit)
+    {
+      this.router.navigateByUrl("/Result");
+    }
+    else
+    {
+      this.router.navigateByUrl("/Selection")
+    }  
+
     }, (error) => {
           if(error.status == 401){
             alert("Sorry - you are not authorized to do that")

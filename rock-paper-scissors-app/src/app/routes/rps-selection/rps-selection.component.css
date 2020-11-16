@@ -9,13 +9,16 @@
 }
 
 .choiceContainer{
-    margin: 50px;
+    margin: 41px;
 }
 
 .roundCounter{
-    position: absolute;
-    right: 1300px;
-    bottom: 545px;
+    position: relative;
+    right: 500px;
+    bottom: 16px;
+    margin: 0px;
+    padding: 0px;
+    font-size: x-large;
 }
 
 .choice{

@@ -9,7 +9,7 @@ export interface RoundCheckRespone {
     rounds: Round[];
  }
 
- export interface Round{
+ export interface Round {
    username: string;
    playerChoice: string;
    roundLimit: number;
