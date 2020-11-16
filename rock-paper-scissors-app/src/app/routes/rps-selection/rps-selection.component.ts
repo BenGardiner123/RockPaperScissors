@@ -29,7 +29,7 @@ export class RpsSelectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.rockPaperScissorService.startGame(this.rockPaperScissorService.username, this.rockPaperScissorService.roundLimit, this.rockPaperScissorService.startDateTime)
   }
 
   chooseThis(option: "Rock" | "Paper" | "Scissors"){

@@ -59,6 +59,7 @@ export class RoundSelectionComponent implements OnInit {
     else if(this.fiveSelected){
       this.rockPaperScissorService.commitRoundSelection('5');
     }
+    
     this.router.navigateByUrl("/Selection");
 
 }
