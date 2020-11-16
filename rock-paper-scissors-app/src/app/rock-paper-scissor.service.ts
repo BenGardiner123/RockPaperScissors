@@ -105,12 +105,14 @@ export class RockPaperScissorService {
     });
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
+    console.log(response);
+    this.username = response.username;
     this._selection = response.playerChoice;
     this._AiSelection = response.cpuChoice;
     this._outcome = response.result;
-    this.username = response.username;
     this._roundCounter = response.roundCounter;
     this._roundLimit = response.roundLimit;
+    this._StartDateTime = response.dateTimeStarted;
     if (this._roundCounter == this._roundLimit)
     {
       this.router.navigateByUrl("/Result");
