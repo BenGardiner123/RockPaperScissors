@@ -1,6 +1,7 @@
 import { Round } from './../../models/round';
 import { Component, Input, OnInit } from '@angular/core';
 import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,13 +16,13 @@ export class RpsSelectionComponent implements OnInit {
  public rockSelected: boolean;
  public paperSelected: boolean;
  public scissorsSelected: boolean;
- public roundCounter: number = 0;
+ public roundCounter: number = this.rockPaperScissorService.roundCounter;
  public roundLimit: number = this.rockPaperScissorService.roundLimit;
 
  
 
 
-  constructor(private rockPaperScissorService: RockPaperScissorService) { 
+  constructor(private rockPaperScissorService: RockPaperScissorService, private router: Router ) { 
     this.rockSelected = false;
     this.paperSelected = false;
     this.scissorsSelected = false;
@@ -56,12 +57,24 @@ export class RpsSelectionComponent implements OnInit {
     else{
       if (this.rockSelected){
         this.rockPaperScissorService.commitSelection("Rock");
+        if(this.rockPaperScissorService.roundCounter == this.rockPaperScissorService.roundLimit){
+          this.router.navigateByUrl("/Result");
+        }
+        this.roundCounter++;
       }
       else if(this.paperSelected){
         this.rockPaperScissorService.commitSelection("Paper");
+        if(this.rockPaperScissorService.roundCounter == this.rockPaperScissorService.roundLimit){
+          this.router.navigateByUrl("/Result");
+        }
+        this.roundCounter++;
       }
       else if(this.scissorsSelected){
         this.rockPaperScissorService.commitSelection("Scissors");
+        if(this.rockPaperScissorService.roundCounter == this.rockPaperScissorService.roundLimit){
+          this.router.navigateByUrl("/Result");
+        }
+        this.roundCounter++;
     }
   
   }

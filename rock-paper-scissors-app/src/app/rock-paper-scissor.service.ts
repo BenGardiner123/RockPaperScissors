@@ -15,7 +15,7 @@ import { Round, RoundCheckRespone } from './models/round';
 export class RockPaperScissorService {
 
   private _StartDateTime: Date | null;
-  private _roundCounter: number | null;
+  private _roundCounter: number | null = 1;
   private _roundLimit: number | null;
   public username: string | null;
   private _AiSelection: string | null;
@@ -113,15 +113,7 @@ export class RockPaperScissorService {
     this._roundCounter = response.roundCounter;
     this._roundLimit = response.roundLimit;
     this._StartDateTime = response.dateTimeStarted;
-    if (this._roundCounter == this._roundLimit)
-    {
-      this.router.navigateByUrl("/Result");
-    }
-    else
-    {
-      this.router.navigateByUrl("/Selection")
-    }  
-
+  
     }, (error) => {
           if(error.status == 401){
             alert("Sorry - you are not authorized to do that")
