@@ -10,6 +10,7 @@ import { RpsLeaderboardComponent } from './routes/rps-leaderboard/rps-leaderboar
 import { LeaderboardDetailComponent } from './leaderboard-detail/leaderboard-detail.component';
 import { RoundSelectionComponent } from './routes/round-selection/round-selection.component';
 import { RoundComponent } from './round/round.component';
+import { RpsResultDetailComponent } from './rps-result-detail/rps-result-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RoundComponent } from './round/round.component';
     RpsLeaderboardComponent,
     LeaderboardDetailComponent,
     RoundSelectionComponent,
-    RoundComponent, 
+    RoundComponent,
+    RpsResultDetailComponent, 
     
   ],
   imports: [

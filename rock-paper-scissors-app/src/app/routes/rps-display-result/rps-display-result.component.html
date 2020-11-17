@@ -1,25 +1,17 @@
-<div class="container">
-    <!-- need to insert the *ngFor here -->
-   
-    <h1> {{rockPaperScissorsService.outcome}}</h1>
+<div class="content">
 
-    <div class="splitter">
-        <div class="choice userSelection">
-            <img [src]="userBackground">
-        </div>
+    <div class="detail-content">
         
-        <div class="vs"><h1>VS</h1></div>
+        <div>
+            <app-rps-result-detail *ngFor="let gameResult of gameresultsservice.gameResults" [leaderboard]="leaderboard"></app-rps-result-detail>
+            <!-- <app-leaderboard-detail *ngFor="let leaderboard of leaderboardService.leaderboards" [leaderboard]="leaderboard"></app-leaderboard-detail> -->
 
-        <div class="choice AiSelection">
-            <img src={{aiBackground}}>
         </div>
-    </div>
-   
-    <div class="buttonBox">
-        <button routerLink="selection">Try Again?</button>
+            
+        
         
     </div>
-    
+
 </div>
 
 

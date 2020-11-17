@@ -8,6 +8,10 @@ export interface serverResponse {
     dateTimeStarted: Date;
  }
 
+ export interface resultEnvelope{
+   gameresults: serverResponse[];
+ }
+
  export interface insertDBResponse {
    success: string;
  }
