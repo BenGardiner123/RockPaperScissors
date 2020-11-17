@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RpsLeaderboardComponent } from './routes/rps-leaderboard/rps-leaderboard.component';
 import { LeaderboardDetailComponent } from './leaderboard-detail/leaderboard-detail.component';
 import { RoundSelectionComponent } from './routes/round-selection/round-selection.component';
-import { RoundComponent } from './round/round.component';
+
 import { RpsResultDetailComponent } from './rps-result-detail/rps-result-detail.component';
 
 @NgModule({
@@ -20,7 +20,6 @@ import { RpsResultDetailComponent } from './rps-result-detail/rps-result-detail.
     RpsLeaderboardComponent,
     LeaderboardDetailComponent,
     RoundSelectionComponent,
-    RoundComponent,
     RpsResultDetailComponent, 
     
   ],

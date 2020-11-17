@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GameResultService } from '../game-result.service';
 import { RoundEnvelope } from '../models/round';
+import { serverResponse } from '../models/serverResonse';
 import { RockPaperScissorService } from '../rock-paper-scissor.service';
 
 @Component({
@@ -11,13 +13,14 @@ import { RockPaperScissorService } from '../rock-paper-scissor.service';
 })
 export class RpsResultDetailComponent implements OnInit {
 
-  public rounds: RoundEnvelope;
-  
+  @Input()
+  results: serverResponse;
+
 
   public aiBackground: string = "";
   public userBackground: string = "";
 
-  constructor(public rockPaperScissorsService: RockPaperScissorService, private router: Router, private httpClient: HttpClient) { 
+  constructor(public rockPaperScissorsService: RockPaperScissorService, gameResultService: GameResultService , private router: Router, private httpClient: HttpClient) { 
     // need to implement the function here that makes the call to the webapi so on load it gets the info
     this.rockPaperScissorsService = rockPaperScissorsService;
     this.aiBackgroundSetter();

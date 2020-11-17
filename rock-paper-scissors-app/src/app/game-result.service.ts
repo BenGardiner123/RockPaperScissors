@@ -9,25 +9,12 @@ import { resultEnvelope } from './models/serverResonse';
 })
 export class GameResultService {
 
+  public roundOutcome: string | null;
   public results: resultEnvelope;
 
   constructor(private router: Router, private httpClient: HttpClient) {
     this.httpClient = httpClient;
    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

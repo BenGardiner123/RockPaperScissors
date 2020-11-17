@@ -1,0 +1,58 @@
+.container{
+    height: 400px;
+    width: 1200px;
+    display: flex;
+    border: 1px black solid;
+    background-color: grey;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 8px 8px #33334d;
+}
+
+.splitter{
+    display: flex;
+    /* border: 1px black solid; */
+     margin-bottom: 20px; 
+}
+
+.vs{
+    /* border: 1px black solid; */
+    padding-left: 132px;
+    padding-right: 132px;
+}
+
+.vs h1{
+    padding-top: 20px;
+}
+    
+
+.choice{
+    /* border: 1px black solid; */
+    height: 200px;
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.choice.userSelection{
+    /* border: 1px black solid; */
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+    
+}
+
+img{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.choice.AiSelection{
+    /* border: 1px black solid; */
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+}
+

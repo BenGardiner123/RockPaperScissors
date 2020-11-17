@@ -1,17 +1,21 @@
-<div class="content">
+<div class="container">
 
-    <div class="detail-content">
+    <div>
+        <h1> {{gameResultService.roundOutcome}}</h1>
+    </div>
+    
+    <div>
+        <app-rps-result-detail *ngFor="let gameResult of gameResultService.results" [results]="gameResult"></app-rps-result-detail>
+    </div>
+
+    <div class="buttonBox">
+        <button routerLink="selection">Try Again?</button>
         
-        <div>
-            <app-rps-result-detail *ngFor="let gameResult of gameresultsservice.gameResults" [leaderboard]="leaderboard"></app-rps-result-detail>
-            <!-- <app-leaderboard-detail *ngFor="let leaderboard of leaderboardService.leaderboards" [leaderboard]="leaderboard"></app-leaderboard-detail> -->
-
-        </div>
+    </div>
+</div>  
             
         
         
-    </div>
 
-</div>
 
 

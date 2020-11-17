@@ -1,4 +1,5 @@
-export interface serverResponse {
+export interface serverResponse 
+{
     username: string,
     playerChoice: string,
     cpuChoice: string,
