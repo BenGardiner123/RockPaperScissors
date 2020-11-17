@@ -15,7 +15,7 @@ export class RpsSelectionComponent implements OnInit {
  public rockSelected: boolean;
  public paperSelected: boolean;
  public scissorsSelected: boolean;
- public roundCounter: number = 1;
+ public roundCounter: number = 0;
  public roundLimit: number = this.rockPaperScissorService.roundLimit;
 
  

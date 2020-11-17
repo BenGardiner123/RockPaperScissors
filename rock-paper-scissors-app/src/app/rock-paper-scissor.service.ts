@@ -61,21 +61,21 @@ export class RockPaperScissorService {
   startGame(username:string, numRounds: number, startDateTime:Date){
     let request = this.httpClient.post<RoundCheckRespone>("http://localhost:5000/rockPaperScissors/NewGame",
     {
+      // this sends all the information neeed to start the game
       username: this.username, 
       roundLimit: this.roundLimit, 
       DateTimeStarted: this.startDateTime, 
       currentRound: this.roundCounter
     });
     request.subscribe((response) => {
-      //this stores the selection being pushed over from the compnent into the variable above
+      //console loggin below to see what gets sent for my own understanding
+      //i
       console.log(response);
       this.username = response.username
       this._roundLimit = response.roundLimit
       this._roundCounter = response.currentRound
       this._StartDateTime = response.DateTimeStarted
       this.router.navigateByUrl("/Selection");
-      // if (this.roundService.roundCounter == this.roundService.roundLimit)
-      // this.router.navigateByUrl("/Result");
       }, (error) => {
             if(error.status == 401){
               alert("Sorry - you are not authorized to do that")
