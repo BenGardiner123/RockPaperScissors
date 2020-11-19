@@ -2,7 +2,7 @@
   
         <div class="choiceContainer">
             
-            <div class="roundCounter"> Round {{this.roundCounter}} / {{this.roundLimit}} </div>
+            <div class="roundCounter"> Round {{this.rockPaperScissorService.roundCounter}} / {{this.rockPaperScissorService.roundLimit}} </div>
             
             <div [ngClass]="!rockSelected ? 'choice rock' : 'choice rock selected'"(click)="chooseThis('Rock')">
             </div>

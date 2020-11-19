@@ -15,7 +15,7 @@ import { Round, RoundCheckRespone } from './models/round';
 export class RockPaperScissorService {
 
   private _StartDateTime: Date;
-  private _roundCounter: number | null = 1;
+  private _roundCounter: number | null;
   private _roundLimit: number | null;
   public username: string | null;
   private _AiSelection: string | null;
@@ -55,17 +55,18 @@ export class RockPaperScissorService {
     var specificNewGameTime = new Date();
     this._StartDateTime = specificNewGameTime;
     this._roundLimit = parseInt(roundNum);
+    this._roundCounter = 0;
 
   }
 
-  startGame(username:string, numRounds: number, startDateTime:Date){
+  startGame(){
     let request = this.httpClient.post<RoundCheckRespone>("http://localhost:5000/rockPaperScissors/NewGame",
     {
       // this sends all the information neeed to start the game
       username: this.username, 
       roundLimit: this.roundLimit, 
       DateTimeStarted: this.startDateTime, 
-      currentRound: this.roundCounter
+      // currentRound: this.roundCounter
     });
     request.subscribe((response) => {
       //console loggin below to see what gets sent for my own understanding
@@ -95,23 +96,19 @@ export class RockPaperScissorService {
 
 
     commitSelection(option: "Rock" | "Paper" | "Scissors"){
+    this._roundCounter++;
     let request = this.httpClient.post<serverResponse>("http://localhost:5000/rockPaperScissors/Rounds",
     {
       username: this.username, 
       playerChoice: option,
       roundLimit: this.roundLimit, 
-      currentRound: this.roundCounter,
+      roundCounter: this.roundCounter,
       DateTimeStarted: this.startDateTime
     });
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
     console.log(response);
     this.username = response.username;
-    this._selection = response.playerChoice;
-    this._AiSelection = response.cpuChoice;
-    this._outcome = response.result;
-    this._roundCounter = response.roundCounter;
-    this._roundLimit = response.roundLimit;
     this._StartDateTime = response.dateTimeStarted;
   
     }, (error) => {

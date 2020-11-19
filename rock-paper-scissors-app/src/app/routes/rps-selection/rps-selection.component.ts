@@ -2,6 +2,7 @@ import { Round } from './../../models/round';
 import { Component, Input, OnInit } from '@angular/core';
 import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
 import { Router } from '@angular/router';
+import { GameResultService } from 'src/app/game-result.service';
 
 
 @Component({
@@ -16,21 +17,22 @@ export class RpsSelectionComponent implements OnInit {
  public rockSelected: boolean;
  public paperSelected: boolean;
  public scissorsSelected: boolean;
- public roundCounter: number = this.rockPaperScissorService.roundCounter;
- public roundLimit: number = this.rockPaperScissorService.roundLimit;
-
+ public roundCounter: number;
+ public roundLimit: number;
+  public rockPaperScissorService: RockPaperScissorService;
  
 
 
-  constructor(private rockPaperScissorService: RockPaperScissorService, private router: Router ) { 
+  constructor(rockPaperScissorService: RockPaperScissorService, private router: Router, private gameResultService: GameResultService) { 
     this.rockSelected = false;
     this.paperSelected = false;
     this.scissorsSelected = false;
+    this.rockPaperScissorService = rockPaperScissorService;
    
   }
 
   ngOnInit(): void {
-    this.rockPaperScissorService.startGame(this.rockPaperScissorService.username, this.rockPaperScissorService.roundLimit, this.rockPaperScissorService.startDateTime)
+    this.rockPaperScissorService.startGame()
   }
 
   chooseThis(option: "Rock" | "Paper" | "Scissors"){
@@ -58,23 +60,23 @@ export class RpsSelectionComponent implements OnInit {
       if (this.rockSelected){
         this.rockPaperScissorService.commitSelection("Rock");
         if(this.rockPaperScissorService.roundCounter == this.rockPaperScissorService.roundLimit){
-          this.router.navigateByUrl("/Result");
+          this.gameResultService.getGameResult();
         }
-        this.roundCounter++;
+        // this.roundCounter++;
       }
       else if(this.paperSelected){
         this.rockPaperScissorService.commitSelection("Paper");
         if(this.rockPaperScissorService.roundCounter == this.rockPaperScissorService.roundLimit){
-          this.router.navigateByUrl("/Result");
+          this.gameResultService.getGameResult();
         }
-        this.roundCounter++;
+        // this.roundCounter++;
       }
       else if(this.scissorsSelected){
         this.rockPaperScissorService.commitSelection("Scissors");
         if(this.rockPaperScissorService.roundCounter == this.rockPaperScissorService.roundLimit){
-          this.router.navigateByUrl("/Result");
+          this.gameResultService.getGameResult();
         }
-        this.roundCounter++;
+        // this.roundCounter++;
     }
   
   }
