@@ -16,50 +16,50 @@ export class RpsResultDetailComponent implements OnInit {
   @Input()
   results: serverResponse;
 
-
   public aiBackground: string = "";
   public userBackground: string = "";
 
-  constructor(public rockPaperScissorsService: RockPaperScissorService, gameResultService: GameResultService , private router: Router, private httpClient: HttpClient) { 
+  constructor(private gameResultService: GameResultService , private router: Router, private httpClient: HttpClient) { 
     // need to implement the function here that makes the call to the webapi so on load it gets the info
-    this.rockPaperScissorsService = rockPaperScissorsService;
+    // this.rockPaperScissorsService = rockPaperScissorsService;
     this.aiBackgroundSetter();
     this.userBackgroundSetter();
   }
 
   ngOnInit(): void {
-    if(this.rockPaperScissorsService.selection == null){
-      this.router.navigateByUrl("/selection");
-    } 
+   
 
   }
 
+  showSingleRound(){
+    this.gameResultService.getGameResult();
+  }
 
   aiBackgroundSetter(){
-    if (this.rockPaperScissorsService.aiselection == "Rock")
+    if (this.results.cpuChoice == "Rock")
     {
       this.aiBackground = "https://i.ibb.co/VqKy2hT/rock.png";
     }
-    if (this.rockPaperScissorsService.aiselection == "Paper")
+    if (this.results.cpuChoice == "Paper")
     {
       this.aiBackground = "https://i.ibb.co/zXMN3xJ/paper.png";
     }
-    else if (this.rockPaperScissorsService.aiselection == "Scissors")
+    else if (this.results.cpuChoice == "Scissors")
     {
       this.aiBackground = "https://i.ibb.co/BPxfRJD/scissors1.png";
     }
   }
 
     userBackgroundSetter(){
-      if (this.rockPaperScissorsService.selection == "Rock")
+      if (this.results.playerChoice == "Rock")
     {
       this.userBackground = "https://i.ibb.co/VqKy2hT/rock.png";
     }
-    if (this.rockPaperScissorsService.selection == "Paper")
+    if (this.results.playerChoice == "Paper")
     {
       this.userBackground = "https://i.ibb.co/zXMN3xJ/paper.png";
     }
-    else if (this.rockPaperScissorsService.selection == "Scissors")
+    else if (this.results.playerChoice == "Scissors")
     {
       this.userBackground = "https://i.ibb.co/BPxfRJD/scissors1.png";
     }

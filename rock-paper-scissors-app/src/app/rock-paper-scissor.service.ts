@@ -14,7 +14,7 @@ import { Round, RoundCheckRespone } from './models/round';
 
 export class RockPaperScissorService {
 
-  private _StartDateTime: Date | null;
+  private _StartDateTime: Date;
   private _roundCounter: number | null = 1;
   private _roundLimit: number | null;
   public username: string | null;
@@ -74,7 +74,7 @@ export class RockPaperScissorService {
       this.username = response.username
       this._roundLimit = response.roundLimit
       this._roundCounter = response.currentRound
-      this._StartDateTime = response.DateTimeStarted
+      // this._StartDateTime = response.DateTimeStarted
       this.router.navigateByUrl("/Selection");
       }, (error) => {
             if(error.status == 401){
@@ -99,9 +99,9 @@ export class RockPaperScissorService {
     {
       username: this.username, 
       playerChoice: option,
-      roundLimit: this._roundLimit, 
-      currentRound: this._roundCounter,
-      DateTimeStarted: this._StartDateTime
+      roundLimit: this.roundLimit, 
+      currentRound: this.roundCounter,
+      DateTimeStarted: this.startDateTime
     });
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above

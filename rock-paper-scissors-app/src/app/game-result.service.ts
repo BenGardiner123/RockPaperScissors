@@ -3,26 +3,40 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoundEnvelope } from './models/round';
 import { resultEnvelope } from './models/serverResonse';
+import { RockPaperScissorService } from './rock-paper-scissor.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameResultService {
 
-  public roundOutcome: string | null;
+  // game outcome will tally the results from all the rounds and decide if you won
+  public gameOutcome: string | null;
+  public Username:string;
+  public DateTimeStarted: Date;
   public results: resultEnvelope;
+  
+  public rockPaperScissors: RockPaperScissorService;
 
-  constructor(private router: Router, private httpClient: HttpClient) {
+  
+
+  constructor(private router: Router, private httpClient: HttpClient, rockPaperScissorsService: RockPaperScissorService) {
     this.httpClient = httpClient;
+    this.rockPaperScissors = rockPaperScissorsService;
+    this.Username = rockPaperScissorsService.username,
+    this.DateTimeStarted = rockPaperScissorsService.startDateTime;
    }
 
 
 
 
-
+// change to post request
   getGameResult(){
-    let request = this.httpClient.get<resultEnvelope>("http://localhost:5000/rockPaperScissors/GameResult");
-    
+    let request = this.httpClient.post<resultEnvelope>("http://localhost:5000/rockPaperScissors/GameResult",
+    {
+      username: this.Username,
+      startDateTime: this.DateTimeStarted,
+    });
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
     this.results = response;
