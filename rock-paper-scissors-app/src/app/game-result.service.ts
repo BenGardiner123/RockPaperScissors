@@ -12,10 +12,7 @@ export class GameResultService {
 
   // game outcome will tally the results from all the rounds and decide if you won
   public gameOutcome: string | null;
-  public Username:string;
-  public DateTimeStarted: Date;
   public results: resultEnvelope;
-  
   public rockPaperScissors: RockPaperScissorService;
 
   
@@ -23,8 +20,7 @@ export class GameResultService {
   constructor(private router: Router, private httpClient: HttpClient, rockPaperScissorsService: RockPaperScissorService) {
     this.httpClient = httpClient;
     this.rockPaperScissors = rockPaperScissorsService;
-    this.Username = rockPaperScissorsService.username,
-    this.DateTimeStarted = rockPaperScissorsService.startDateTime;
+  
    }
 
 
@@ -34,14 +30,13 @@ export class GameResultService {
   getGameResult(){
     let request = this.httpClient.post<resultEnvelope>("http://localhost:5000/rockPaperScissors/GameResult",
     {
-      username: this.Username,
-      startDateTime: this.DateTimeStarted,
+      Username: this.rockPaperScissors.username,
+      dateTimeStarted: this.rockPaperScissors.startDateTime,
     });
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
     this.results = response;
     console.log(response);
-    // console.log(response.gameResults);
     console.log(this.results);
     this.router.navigateByUrl("/Result");
     }, (error) => {

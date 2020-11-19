@@ -66,7 +66,7 @@ export class RockPaperScissorService {
       username: this.username, 
       roundLimit: this.roundLimit, 
       DateTimeStarted: this.startDateTime, 
-      // currentRound: this.roundCounter
+      currentRound: this.roundCounter
     });
     request.subscribe((response) => {
       //console loggin below to see what gets sent for my own understanding
