@@ -3,7 +3,7 @@ export interface serverResponse
     username: string;
     playerChoice: string;
     cpuChoice: string;
-    result: string;
+    outcome: string;
     roundCounter: number;
     roundLimit: number;
     dateTimeStarted: Date;

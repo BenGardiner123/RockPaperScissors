@@ -13,16 +13,20 @@ import { RockPaperScissorService } from 'src/app/rock-paper-scissor.service';
 
 
 export class RpsDisplayResultComponent implements OnInit {
+
   
-  public rounds: RoundEnvelope;
+  
   public gameResultService: GameResultService
 
   constructor(gameResultService: GameResultService, private router: Router, private httpClient: HttpClient) { 
     this.gameResultService = gameResultService;
-    this.showGameResult();
+    
   }
 
   ngOnInit(): void {
+    this.showGameResult();
+    this.gameResultService.getWinner();
+    this.gameResultService.calulateWinner();
     
   }
 

@@ -22,18 +22,17 @@ export class RpsResultDetailComponent implements OnInit {
   constructor(private gameResultService: GameResultService , private router: Router, private httpClient: HttpClient) { 
     // need to implement the function here that makes the call to the webapi so on load it gets the info
     // this.rockPaperScissorsService = rockPaperScissorsService;
+  
+  }
+
+  ngOnInit(): void {
     this.aiBackgroundSetter();
     this.userBackgroundSetter();
   }
 
-  ngOnInit(): void {
-   
-
-  }
-
-  showSingleRound(){
-    this.gameResultService.getGameResult();
-  }
+  // showSingleRound(){
+  //   this.gameResultService.getGameResult();
+  // }
 
   aiBackgroundSetter(){
     if (this.results.cpuChoice == "Rock")
