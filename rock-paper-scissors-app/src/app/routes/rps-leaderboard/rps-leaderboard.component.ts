@@ -17,11 +17,11 @@ export class RpsLeaderboardComponent implements OnInit {
 
   constructor(leaderboardService: LeaderBoardService) { 
     this.leaderboardService = leaderboardService;
-    this.showLeaderboard();
+    
   }
 
   ngOnInit(): void {
-    
+    this.showLeaderboard();
   }
 
   showLeaderboard(){

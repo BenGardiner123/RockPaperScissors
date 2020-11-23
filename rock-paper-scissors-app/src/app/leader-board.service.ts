@@ -24,14 +24,12 @@ export class LeaderBoardService {
     let request = this.httpClient.post<LeaderboardEnvelope>("http://localhost:5000/rockPaperScissors/Leaderboard",
     {
       username: this.rockPaperScissorService.username,
-      dateTimeStarted: this.rockPaperScissorService.startDateTime,
     });
-    
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above
     this.leaderboards = response;
     console.log(response);
-    console.log(response.leaderboards);
+    console.log(response.leaderboard);
     console.log(this.leaderboards);
     this.router.navigateByUrl("/Leaderboard");
     }, (error) => {
