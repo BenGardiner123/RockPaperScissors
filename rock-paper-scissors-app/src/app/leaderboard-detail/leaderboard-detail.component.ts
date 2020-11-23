@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LeaderBoardService } from '../leader-board.service';
-import {Leaderboard} from '../models/leaderboard'
+import {LastFiveOutcomes, Leaderboard} from '../models/leaderboard'
 
 @Component({
   selector: 'app-leaderboard-detail',
@@ -11,6 +11,9 @@ export class LeaderboardDetailComponent implements OnInit {
 
   @Input()
   leaderboard: Leaderboard;
+
+  // @Input()
+  // lastFive: LastFiveOutcomes;
 
   public leaderboardService: LeaderBoardService;
 
