@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Leaderboard, LeaderboardEnvelope} from './models/leaderboard';
+import { RockPaperScissorService } from './rock-paper-scissor.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,21 @@ import { Leaderboard, LeaderboardEnvelope} from './models/leaderboard';
 export class LeaderBoardService {
 
   public leaderboards: LeaderboardEnvelope;
+  public rockPaperScissorService: RockPaperScissorService;
  
 
-  constructor(private router: Router, private httpClient: HttpClient) {
+  constructor(private router: Router, private httpClient: HttpClient,  rockPaperScissorsService: RockPaperScissorService) {
     this.httpClient = httpClient;
+    this.rockPaperScissorService = rockPaperScissorsService;
    }
 
 
  getLeaderboard(){
-    let request = this.httpClient.get<LeaderboardEnvelope>("http://localhost:5000/rockPaperScissors/Leaderboard");
+    let request = this.httpClient.post<LeaderboardEnvelope>("http://localhost:5000/rockPaperScissors/Leaderboard",
+    {
+      username: this.rockPaperScissorService.username,
+      dateTimeStarted: this.rockPaperScissorService.startDateTime,
+    });
     
     request.subscribe((response) => {
     //this stores the selection being pushed over from the compnent into the variable above

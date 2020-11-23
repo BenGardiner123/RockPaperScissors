@@ -60,7 +60,7 @@ getWinner(){
      this.gameOutcome = "Lose"
      console.log(this.gameOutcome);
     }
-   else if(this.drawCounter > this.wincounter){
+   else if(this.drawCounter >= this.wincounter || this.drawCounter >= this.loseCounter){
      this.gameOutcome = "Draw"
      console.log(this.gameOutcome);
     }

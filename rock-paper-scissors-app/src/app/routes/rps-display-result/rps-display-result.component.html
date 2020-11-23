@@ -3,7 +3,7 @@
     
     <div>
         <div class="outcomeDisplay">
-            <h1>{{gameResultService.gameOutcome}} </h1>
+            <h1>You {{gameResultService.gameOutcome}} ! </h1>
         </div>
         <app-rps-result-detail *ngFor="let gameResult of gameResultService.results" [results]="gameResult"></app-rps-result-detail>
     </div>
